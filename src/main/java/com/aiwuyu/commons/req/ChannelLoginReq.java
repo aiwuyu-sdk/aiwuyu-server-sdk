@@ -8,6 +8,7 @@ package com.aiwuyu.commons.req;
 
 /**
  * <P>
+ * 渠道登录请求
  * <P>
  * 
  * @author caojiayao
@@ -17,6 +18,9 @@ public class ChannelLoginReq extends BaseChannelReq {
 
     /** 用户uid **/
     private String uid;
+    
+    /** 登录时间 **/
+    private String loginDate;
 
     /**
      * @return the uid
@@ -31,5 +35,20 @@ public class ChannelLoginReq extends BaseChannelReq {
     public void setUid(String uid) {
         this.uid = uid;
     }
+
+    /**
+     * @return the loginDate
+     */
+    public String getLoginDate() {
+        return loginDate;
+    }
+
+    /**
+     * @param loginDate the loginDate to set
+     */
+    public void setLoginDate(String loginDate) {
+        this.loginDate = loginDate;
+    }
+    
     
 }
