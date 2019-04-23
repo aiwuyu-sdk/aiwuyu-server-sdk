@@ -55,7 +55,7 @@ sign|String|是	|签名	|加签内容
 参数		|类型|是否必填|描述											|备注
 :--		|:-- |:--|:--										|:--
 uid|String|是	|渠道用户ID	|渠道第三方用户ID
-loginDate|String|否	|登录时间	|
+loginDate|String|否	|登录时间	|格式(yyyy-MM-dd HH:mm:ss)
 
 ## 四.  签名方式
 #### 1. 签名说明
