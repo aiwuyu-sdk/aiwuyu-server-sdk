@@ -90,3 +90,5 @@ public class AiwuyuServerSdkTest2 {
     }
 }
 ```
+#### 3. RDS 公私钥生成方式
+可参考支付宝生成工具(https://docs.open.alipay.com/291/106097/)
