@@ -7,6 +7,7 @@ package com.aiwuyu.commons.sdk;
 
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.Map;
 
 import com.aiwuyu.commons.Constants;
@@ -48,6 +49,28 @@ public class AiwuyuServerSdk {
 
         } catch (Exception e) {
             throw new RuntimeException("渠道加签错误 channelReqMap:" + channelReqMap + " , priKey:" + priKey, e);
+        }
+
+    }
+
+    /**
+     * <P> 渠道签名验证 <P>
+     * @param channelSignJson
+     * @param pubkey
+     * @param charset
+     * @return
+     */
+    public static boolean verifySign(String channelSignJson, String pubkey, Charset charset) {
+        try {
+            @SuppressWarnings("unchecked")
+            Map<String, Object> channelReqMap = JsonObjectMapperFactory.getInstance().readValue(channelSignJson,
+                new HashMap<String, Object>().getClass());
+
+            return SignUtil.byCode(channelReqMap.get("signType").toString()).verify(channelReqMap,
+                channelReqMap.get("sign").toString(), pubkey, charset);
+
+        } catch (Exception e) {
+            throw new RuntimeException("渠道验签错误 channelSignJson:" + channelSignJson + " , pubkey:" + pubkey, e);
         }
 
     }

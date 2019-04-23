@@ -22,7 +22,7 @@ import com.aiwuyu.commons.sdk.AiwuyuServerSdk;
  * @author caojiayao
  * @version $Id: AiwuyuServerSdkTest.java, v 0.1 2019年4月18日 上午11:21:57 caojiayao Exp $
  */
-public class AiwuyuServerSdkTest {
+public class AiwuyuServerSdkTest2 {
     /** 渠道私钥 **/
     String privateKey = "渠道私钥";
     /** 渠道公钥 **/
@@ -31,7 +31,7 @@ public class AiwuyuServerSdkTest {
     String signType = "RSA";
 
     @Test
-    public void channelSign_test() {
+    public void verifySign_test() {
         ChannelLoginReq channelLoginReq = new ChannelLoginReq();
         // 日期格式 yyyy-MM-dd HH:mm:ss
         channelLoginReq.setReqDate(DateFormatUtils.format(new Date(), Constants.SHARE_DEFAULT_FORMAT));
@@ -43,6 +43,11 @@ public class AiwuyuServerSdkTest {
             AiwuyuServerSdk.channelSign(channelLoginReq, signType, privateKey, Charset.defaultCharset());
 
         System.out.println(channelSignJson);
-    }
 
+        // 获得验签结果
+        final boolean verifySignResult =
+            AiwuyuServerSdk.verifySign(channelSignJson, publicKey, Charset.defaultCharset());
+
+        System.out.println(verifySignResult);
+    }
 }
