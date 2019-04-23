@@ -14,7 +14,7 @@
   <version>1.0.0</version>
 </dependency>
 ```
-* 渠道签名使用方式
+* 渠道签名
 ```java
 public class AiwuyuServerSdkTest {
     /** 渠道私钥 **/
@@ -58,7 +58,35 @@ uid|String|是	|渠道用户ID	|渠道第三方用户ID
 loginDate|String|否	|登录时间	|
 
 ## 四.  签名方式
-* 确定需要签名的参数，空字符串不参与签名
+#### 1. 签名说明
+* 确定需要签名的参数，null和空字符串不参与签名
 * 签名参数进行排序，自然排序
 * 以key=value形式通过&拼接参数，key=value&key2=value2
 * 使用签名算法生成签名
+
+#### 2. 验证方式
+```java
+public class AiwuyuServerSdkTest2 {
+    /** 渠道私钥 **/
+    String privateKey = "渠道私钥";
+    /** 渠道公钥 **/
+    String publicKey = "渠道公钥";
+    /** 加签类型 **/
+    String signType = "RSA";
+
+    @Test
+    public void verifySign_test() {
+        ChannelLoginReq channelLoginReq = new ChannelLoginReq();
+        // 日期格式 yyyy-MM-dd HH:mm:ss
+        channelLoginReq.setReqDate(DateFormatUtils.format(new Date(), Constants.SHARE_DEFAULT_FORMAT));
+        channelLoginReq.setChannelCode("渠道CODE");
+        channelLoginReq.setUid("渠道用户ID");
+
+        // 获得验签结果
+        final boolean verifySignResult =
+            AiwuyuServerSdk.verifySign(channelLoginReq, signType, publicKey, Charset.defaultCharset());
+
+        System.out.println(verifySignResult);
+    }
+}
+```
