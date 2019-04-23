@@ -1,8 +1,8 @@
 # aiwuyu-server-sdk
-## 一. 服务SDK介绍
-爱物语服务 SDK是针对爱物语服务端快速接入的工具，提供RSA、MD5加签和渠道登录POJO定义。
+## 一. 服务端SDK介绍
+爱物语服务端SDK是针对爱物语服务端快速接入的工具，提供RSA、MD5加签和联合登录POJO定义。
 
-* 合登录交互逻辑
+* 联合登录交互逻辑
 ![Image text](https://aiwuyu-cms-prd.oss-cn-hangzhou.aliyuncs.com/Pic/sdk-doc/%E8%81%94%E5%90%88%E7%99%BB%E5%BD%95%E4%BA%A4%E4%BA%92%E9%80%BB%E8%BE%91_new.jpg)
 
 ## 二. 接入指南
@@ -56,3 +56,9 @@ sign|String|是	|签名	|加签内容
 :--		|:-- |:--|:--										|:--
 uid|String|是	|渠道用户ID	|渠道第三方用户ID
 loginDate|String|否	|登录时间	|
+
+## 四.  签名方式
+* 确定需要签名的参数，空字符串不参与签名
+* 签名参数进行排序，自然排序
+* 以key=value形式通过&拼接参数，key=value&key2=value2
+* 使用签名算法生成签名
