@@ -9,9 +9,9 @@
 * Maven 依赖 ，jar已上传中央仓库
 ```
 <dependency>
-    <groupId>com.aliyun.oss</groupId>
-    <artifactId>aliyun-sdk-oss</artifactId>
-    <version>2.8.3</version>
+  <groupId>com.aiwuyu.commons</groupId>
+  <artifactId>aiwuyu-server-sdk</artifactId>
+  <version>1.0.0</version>
 </dependency>
 ```
 * 渠道签名使用方式
