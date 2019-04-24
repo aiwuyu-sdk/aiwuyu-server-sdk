@@ -55,14 +55,17 @@ sign|String|是	|签名	|加签内容
 参数		|类型|是否必填|描述											|备注
 :--		|:-- |:--|:--										|:--
 uid|String|是	|渠道用户ID	|渠道第三方用户ID
-loginDate|String|否	|登录时间	|
+loginDate|String|否	|登录时间	|格式(yyyy-MM-dd HH:mm:ss)
 
 ## 四.  签名方式
 #### 1. 签名说明
 * 确定需要签名的参数，null和空字符串不参与签名
 * 签名参数进行排序，自然排序
 * 以key=value形式通过&拼接参数，key=value&key2=value2
-* 使用签名算法生成签名
+* 可以使用MD5、RDS签名算法生成签名
+* 支持输入2048位和1024位的RSA私钥
+* 目前仅支持PKCS8格式的私钥和X509格式公钥
+* 签名仅支持字符集UTF-8
 
 #### 2. 验证方式
 ```java
@@ -90,3 +93,5 @@ public class AiwuyuServerSdkTest2 {
     }
 }
 ```
+#### 3. RDS 公私钥生成方式
+可参考支付宝生成工具(https://docs.open.alipay.com/291/106097/)
