@@ -93,5 +93,17 @@ public class AiwuyuServerSdkTest2 {
     }
 }
 ```
-#### 3. RDS 公私钥生成方式
-可参考支付宝生成工具(https://docs.open.alipay.com/291/106097/)
+#### 3. RSA公私钥生成方式
+* 可参考支付宝生成工具(https://docs.open.alipay.com/291/106097/)
+
+## 五.  渠道注册
+#### 1. 邮件申请方式
+* 将生成好的RSA公钥或者MD5密钥发送至caojiayao001@aiwuyu.com
+* 邮件发送模版
+```
+  商户名称：xx
+  渠道编号：xxchannel
+  签名方式：RSA\MD5
+  签名密钥：XXXXXXX
+```
+#### 2. 商户平台注册(敬请期待)
