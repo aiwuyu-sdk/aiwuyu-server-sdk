@@ -102,8 +102,8 @@ public class AiwuyuServerSdkTest2 {
 * 邮件发送模版
 ```
   商户名称：xx
-  渠道编号：xxchannel
   签名方式：RSA\MD5
   签名密钥：XXXXXXX
 ```
+* 配置完成后会收到回执邮件，内容包含“渠道编码”信息
 #### 2. 商户平台注册(敬请期待)
