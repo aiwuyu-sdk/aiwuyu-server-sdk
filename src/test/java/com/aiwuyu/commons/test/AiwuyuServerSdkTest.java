@@ -5,7 +5,7 @@
  */
 package com.aiwuyu.commons.test;
 
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
 import org.apache.commons.lang3.time.DateFormatUtils;
@@ -40,7 +40,7 @@ public class AiwuyuServerSdkTest {
 
         // 获得渠道签名
         final String channelSignJson =
-            AiwuyuServerSdk.channelSign(channelLoginReq, signType, privateKey, Charset.defaultCharset());
+            AiwuyuServerSdk.channelSign(channelLoginReq, signType, privateKey, StandardCharsets.UTF_8);
 
         System.out.println(channelSignJson);
     }
