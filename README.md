@@ -32,7 +32,7 @@ public class AiwuyuServerSdkTest {
         
         // 获得渠道签名
         final String channelSignJson =
-            AiwuyuServerSdk.channelSign(channelLoginReq, signType, privateKey, Charset.defaultCharset());
+            AiwuyuServerSdk.channelSign(channelLoginReq, signType, privateKey, StandardCharsets.UTF_8);
 
         System.out.println(channelSignJson);
     }
@@ -87,7 +87,7 @@ public class AiwuyuServerSdkTest2 {
 
         // 获得验签结果
         final boolean verifySignResult =
-            AiwuyuServerSdk.verifySign(channelLoginReq, signType, publicKey, Charset.defaultCharset());
+            AiwuyuServerSdk.verifySign(channelLoginReq, signType, publicKey, StandardCharsets.UTF_8);
 
         System.out.println(verifySignResult);
     }
