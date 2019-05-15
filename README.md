@@ -3,7 +3,7 @@
 爱物语服务端SDK是针对爱物语服务端快速接入的工具，提供RSA、MD5加签和联合登录POJO定义。
 
 * 联合登录交互逻辑
-![Image text](https://aiwuyu-cms-prd.oss-cn-hangzhou.aliyuncs.com/Pic/sdk-doc/%E7%88%B1%E7%89%A9%E8%AF%AD%E8%81%94%E5%90%88%E7%99%BB%E5%BD%95_20190515_2.png)
+![Image text](http://aiwuyu-cms-prd.oss-cn-hangzhou.aliyuncs.com/Pic/sdk-doc/union_login.png)
 
 ## 二. 接入指南
 * Maven 依赖 ，jar已上传中央仓库
