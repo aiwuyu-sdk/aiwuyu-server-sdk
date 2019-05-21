@@ -108,6 +108,6 @@ public class AiwuyuServerSdkTest2 {
 * 配置完成后会收到回执邮件，内容如下
 ```
   渠道编码：xxxx
-  首页地址：RSA\MD5
+  首页地址：https://h5.aiwuyu.com/awy/index.html?channel=xxx#/index
 ```
 #### 2. 商户平台注册(敬请期待)
