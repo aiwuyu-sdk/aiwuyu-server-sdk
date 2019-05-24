@@ -3,7 +3,7 @@
 爱物语服务端SDK是针对爱物语服务端快速接入的工具，提供RSA、MD5加签和联合登录POJO定义。
 
 * 联合登录交互逻辑
-![Image text](https://aiwuyu-cms-prd.oss-cn-hangzhou.aliyuncs.com/Pic/sdk-doc/%E8%81%94%E5%90%88%E7%99%BB%E5%BD%95%E4%BA%A4%E4%BA%92%E9%80%BB%E8%BE%91_new.jpg)
+![Image text](http://aiwuyu-cms-prd.oss-cn-hangzhou.aliyuncs.com/Pic/sdk-doc/union_login.png)
 
 ## 二. 接入指南
 * Maven 依赖 ，jar已上传中央仓库
@@ -32,7 +32,7 @@ public class AiwuyuServerSdkTest {
         
         // 获得渠道签名
         final String channelSignJson =
-            AiwuyuServerSdk.channelSign(channelLoginReq, signType, privateKey, Charset.defaultCharset());
+            AiwuyuServerSdk.channelSign(channelLoginReq, signType, privateKey, StandardCharsets.UTF_8);
 
         System.out.println(channelSignJson);
     }
@@ -87,7 +87,7 @@ public class AiwuyuServerSdkTest2 {
 
         // 获得验签结果
         final boolean verifySignResult =
-            AiwuyuServerSdk.verifySign(channelLoginReq, signType, publicKey, Charset.defaultCharset());
+            AiwuyuServerSdk.verifySign(channelLoginReq, signType, publicKey, StandardCharsets.UTF_8);
 
         System.out.println(verifySignResult);
     }
@@ -105,5 +105,9 @@ public class AiwuyuServerSdkTest2 {
   签名方式：RSA\MD5
   签名密钥：XXXXXXX
 ```
-* 配置完成后会收到回执邮件，内容包含“渠道编码”信息
+* 配置完成后会收到回执邮件，内容如下
+```
+  渠道编码：xxxx
+  首页地址：https://h5.aiwuyu.com/awy/index.html?channel=xxx#/index
+```
 #### 2. 商户平台注册(敬请期待)
